@@ -1,0 +1,234 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a237e;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 20px;
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.signup-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%);
+  z-index: -1;
+  border-radius: 16px;
+  animation: borderLight 4s linear infinite;
+}
+
+.signup-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signup-input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.signup-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.otp-field {
+  display: flex;
+  gap: 10px;
+}
+
+.otp-button {
+  padding: 0 20px;
+  border-radius: 8px;
+  border: none;
+  background: rgb(0, 49, 113);
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.otp-button:hover {
+  background: rgba(255, 255, 255, 0.364);
+}
+
+.otp-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.signup-button {
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  background:  rgb(0, 49, 113);
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.signup-button:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.terms-checkbox input {
+  margin-right: 10px;
+}
+
+.terms-link {
+  color: #3928a7;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  text-align: center;
+  color: white;
+  margin: 20px 0;
+  position: relative;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.google-auth {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-redirect {
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.login-redirect span {
+  color:  #3928a7;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.login-redirect span:hover {
+  text-decoration: none;
+}
+
+.error-message {
+  color: #ff6b6b;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .signup-card {
+    padding: 30px 20px;
+  }
+  
+  .otp-field {
+    flex-direction: column;
+  }
+  
+  .otp-button {
+    padding: 12px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,275 @@
+
+.ddp-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ddp-navbar {
+  background-color: #1a237e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ddp-logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ddp-logo {
+  height: 40px;
+  width: auto;
+}
+
+.ddp-navbar h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.ddp-profile-nav {
+  color: white;
+}
+
+.ddp-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.ddp-content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.ddp-header {
+  background-color: #1a237e;
+  color: white;
+  padding: 1.5rem 2rem;
+}
+
+.ddp-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ddp-header-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.ddp-child-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.ddp-category-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0 0;
+  color: #b3c6ff;
+}
+
+.ddp-header-stats {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ddp-stat-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  min-width: 150px;
+}
+
+.ddp-stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #b3c6ff;
+  margin-bottom: 0.5rem;
+}
+
+.ddp-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.ddp-filter-bar {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid #eaeef2;
+}
+
+.ddp-filter-label {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.ddp-filter-select,
+.ddp-date-picker {
+  padding: 0.5rem;
+  border: 1px solid #c5cae9;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+
+.ddp-date-range-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ddp-search-container {
+  padding: 1.5rem;
+}
+
+.ddp-search-header {
+  margin-bottom: 1.5rem;
+}
+
+.ddp-search-title {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.ddp-table-container {
+  overflow-x: auto;
+}
+
+.ddp-search-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.ddp-search-table th {
+  background-color: #303f9f;
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+.ddp-search-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eaeef2;
+  color: #34495e;
+}
+
+.ddp-search-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.ddp-date-cell {
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.ddp-query-cell {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ddp-time-cell {
+  white-space: nowrap;
+  color: #7f8c8d;
+}
+
+.ddp-duration-cell {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.ddp-risk-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ddp-harmful {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.ddp-safe {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.ddp-no-results {
+  text-align: center;
+  padding: 3rem;
+  color: #7f8c8d;
+  background-color: white;
+}
+
+.ddp-no-results i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #bdc3c7;
+}
+
+.ddp-no-results p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .ddp-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .ddp-header-stats {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+  
+  .ddp-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .ddp-date-range-picker {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .ddp-search-table th,
+  .ddp-search-table td {
+    padding: 0.75rem;
+  }
+}

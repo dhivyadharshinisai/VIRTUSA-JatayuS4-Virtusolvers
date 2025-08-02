@@ -1,0 +1,366 @@
+.ch-profile-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ch-profile-header {
+  margin-bottom: 4rem;
+}
+
+.ch-profile-header h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+
+.ch-profiles-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ch-profiles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.ch-profile-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 150px;
+  margin: 0 10px;
+}
+
+.ch-profile-card:hover {
+  transform: scale(1.05);
+}
+
+.ch-profile-avatar {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+  position: relative;
+  border-radius: 15px; 
+  overflow: hidden;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.ch-profile-card:hover .ch-profile-avatar {
+  border-color: #e5e5e5;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); 
+}
+
+.ch-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ch-profile-card:hover .ch-profile-image {
+  transform: scale(1.05);
+}
+
+.ch-profile-initial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 500;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.ch-profile-card:hover .ch-profile-initial {
+  transform: scale(1.05);
+}
+
+.ch-profile-name {
+  font-size: 1.3rem;
+  color: #808080;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.ch-profile-card:hover .ch-profile-name {
+  color: #959595;
+}
+
+.ch-add-icon {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c7c5c5;
+  position: relative;
+  border-radius: 8px; 
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.ch-profile-card.add-profile:hover .ch-add-icon {
+  background-color: #444;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); 
+}
+
+.plus-horizontal, .plus-vertical {
+  background-color: #808080;
+  position: absolute;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.plus-horizontal {
+  width: 50px;
+  height: 4px;
+}
+
+.plus-vertical {
+  width: 4px;
+  height: 50px;
+}
+
+.ch-profile-card.add-profile:hover .plus-horizontal,
+.ch-profile-card.add-profile:hover .plus-vertical {
+  background-color: #ffffff;
+}
+
+.ch-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ch-button:hover {
+  background-color: #f40612;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ch-button.secondary {
+  background-color: transparent;
+  border: 1px solid #808080;
+  color: #808080;
+  box-shadow: none;
+}
+
+.ch-button.secondary:hover {
+  border-color: #ffffff;
+  color: #383838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ch-loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #141414;
+}
+.ch-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(229, 9, 20, 0.3);
+  border-radius: 50%;
+  border-top-color: #e50914;
+  animation: spin 1s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.ch-auth-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #141414;
+  text-align: center;
+}
+
+.ch-auth-content {
+  max-width: 500px;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.ch-auth-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ch-auth-content p {
+  font-size: 1.2rem;
+  color: #808080;
+  margin-bottom: 2rem;
+}
+
+.ch-profile-footer {
+  margin-top: 4rem;
+}
+
+.ch-add-form-container {
+  background-color: rgba(207, 203, 203, 0.7);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.ch-add-form-container h2 {
+  color: #3e3e3e;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.ch-add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ch-form-avatar {
+  margin-bottom: 2rem;
+}
+
+.ch-avatar-upload {
+  display: block;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #cecece;
+}
+
+.ch-form-group {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.ch-form-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  color: #606060;
+}
+.ch-form-input.error {
+  border-color: #e50914;
+}
+.ch-form-input:focus {
+  outline: none;
+  border-color: #fff;
+}
+.ch-error {
+  color: #e50914;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+.ch-form-buttons {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ch-add-form-container {
+    padding: 1.5rem;
+  }
+  
+  .ch-avatar-upload {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ch-add-form-container {
+    padding: 1rem;
+  }
+  
+  .ch-avatar-upload {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .ch-form-input {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ch-profile-card {
+    width: 120px;
+  }
+  
+  .ch-profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .ch-add-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ch-profile-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ch-profile-card {
+    width: 100px;
+  }
+  
+  .ch-profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .ch-add-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ch-profile-header h1 {
+    font-size: 2rem;
+  }
+}
