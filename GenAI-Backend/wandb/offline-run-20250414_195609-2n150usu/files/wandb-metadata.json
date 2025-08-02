@@ -1,0 +1,26 @@
+{
+  "os": "Windows-11-10.0.22631-SP0",
+  "python": "CPython 3.12.2",
+  "startedAt": "2025-04-14T14:26:11.079544Z",
+  "program": "d:\\Genai in app\\train_model.py",
+  "codePath": "train_model.py",
+  "root": "D:\\Genai in app",
+  "host": "bhuvanesh",
+  "executable": "C:\\Program Files\\Python312\\python.exe",
+  "codePathLocal": "train_model.py",
+  "cpu_count": 10,
+  "cpu_count_logical": 12,
+  "disk": {
+    "/": {
+      "total": "314571747328",
+      "used": "197631905792"
+    }
+  },
+  "memory": {
+    "total": "8259358720"
+  },
+  "cpu": {
+    "count": 10,
+    "countLogical": 12
+  }
+}
