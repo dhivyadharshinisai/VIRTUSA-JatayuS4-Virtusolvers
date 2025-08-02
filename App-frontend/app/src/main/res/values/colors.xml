@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="bg_color">#c8dbee</color>
+    <color name="background_color">#3674B5</color>
+    <color name="Bottom_menu_bar">#FFFCFB</color>
+
+
+    <color name="nav_active">#1976D2</color>
+    <color name="nav_inactive">#888888</color>
+
+    <color name="switch_thumb_grey">#CCCCCC</color>
+    <color name="switch_track_grey">#E0E0E0</color>
+
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FFA726</color>
+    <color name="custom_orange">#FFA726</color>
+    <color name="light_purple">#D7CCF7</color>
+
+    <color name="query_topic_background">#E8F5E9</color>
+    <color name="query_data_background">#F8F9FA</color>
+    <color name="query_divider">#CCCCCC</color>
+
+
+
+
+    <!-- Custom mental health category colors -->
+    <color name="anxiety_orange">#F4A950</color>
+    <color name="isolation_gray_blue">#9AA6B2</color>
+    <color name="depression_light_blue">#ADD8E6</color>
+    <color name="suicide_red">#E52020</color>
+    <color name="no_risk_green">#1DCD9F</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+    <color name="blue">#2196F3</color>
+    <color name="gray">#B0BEC5</color>
+
+
+
+    <color name="profile_color_1">#F44336</color>
+    <color name="profile_color_2">#E91E63</color>
+    <color name="profile_color_3">#9C27B0</color>
+    <color name="profile_color_4">#3F51B5</color>
+    <color name="profile_color_5">#03A9F4</color>
+    <color name="profile_color_6">#009688</color>
+    <color name="profile_color_7">#4CAF50</color>
+    <color name="profile_color_8">#FF9800</color>
+    <color name="profile_color_9">#795548</color>
+    <color name="profile_color_10">#607D8B</color>
+
+
+</resources>

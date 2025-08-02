@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.safemindwatch">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".SafeMindWatchApp"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher_new"
+        android:roundIcon="@mipmap/ic_launcher_round_new"
+        android:theme="@style/Theme.SafeMindWatch"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.gms.client_id"
+            android:value="@string/default_web_client_id" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCgBDDap_5MKQ-kC-iQsHrEo8w34SE-MzY" />
+
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SafeMindWatch">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" android:exported="true" />
+        <activity android:name=".SignupActivity" android:exported="true" />
+        <activity android:name=".PieChartActivity" android:exported="true" />
+        <activity android:name=".StatisticsCardActivity" android:exported="true" />
+        <activity android:name=".Mental_Health_Prediction" android:exported="true" />
+        <activity android:name=".AbnormalQueriesActivity" android:exported="true" />
+        <activity android:name=".PhoneVerificationActivity" android:exported="true" />
+        <activity android:name=".NearbyDoctorsActivity" android:exported="true" />
+        <activity android:name=".ProfileActivity" android:exported="true" />
+        <activity android:name=".SentimentActivity" android:exported="true" />
+        <activity android:name=".SOS_Notification" android:exported="true" />
+        <activity android:name=".PeakHourActivity" android:exported="true"/>
+        <activity android:name=".TermsPrivacyActivity" android:exported="true" />
+        <activity android:name=".ProfileSelectionActivity" android:exported="true" />
+        <activity android:name=".ChildProfileCreation" android:exported="true" />
+        <activity android:name=".DrillDownActivity" android:exported="true" />
+        <activity android:name=".TermsAndConditions" android:exported="true" />
+        <activity android:name=".NewPasswordActivity" android:exported="true" />
+        <activity android:name=".DoctorSearchActivity" android:exported="true" />
+        <activity
+            android:name=".SosAlertActivity"
+            android:theme="@style/Theme.SafeMindWatch"
+            android:exported="true"/>
+
+        <activity android:name=".PasswordActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="safemindwatch" android:host="reset-password" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

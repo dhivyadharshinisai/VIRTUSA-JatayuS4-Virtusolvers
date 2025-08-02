@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Border background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E3F2FD"/> <!-- Light blue background -->
+            <stroke android:width="2dp" android:color="#3F51B5"/> <!-- Border -->
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+    <!-- Dropdown icon (right side) -->
+    <item android:drawable="@android:drawable/arrow_down_float"
+        android:right="12dp"
+        android:gravity="right|center_vertical"/>
+</layer-list>

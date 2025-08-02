@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "SafeMind Watch",
+  "version": "1.0",
+  "description": "Tracks and analyzes user searches to provide mental health alerts.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "scripting",
+    "identity",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://accounts.google.com/*",
+    "http://localhost:5000/*",
+    "http://localhost:5001/*"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "https://*.google.com/search*",
+      "https://*.yahoo.com/search*"
+    ],
+    "js": ["content.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "SafeMind Watch - Click to login or manage profiles"
+  },
+  "oauth2": {
+    "client_id": "534622735292-b3dda0oqdo1rkm4hpdq6ill8gksqm622.apps.googleusercontent.com",
+    "scopes": ["openid", "email", "profile"]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://www.googleapis.com http://localhost:5000 http://localhost:5001;"
+  },
+  "minimum_chrome_version": "88"
+}

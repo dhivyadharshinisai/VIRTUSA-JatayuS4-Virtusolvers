@@ -1,0 +1,148 @@
+<resources>
+
+    <string name="app_name">SafeMindWatch</string>
+
+    <string name="default_web_client_id">808493242507-d1lvdphasrirkb1qnch0gaumg7p4g8bl.apps.googleusercontent.com</string>
+
+    <string name="background_image_desc">Background Image</string>
+    <string name="menu_icon_desc">Menu Icon</string>
+    <string name="pie_chart_desc">Pie Chart</string>
+    <string name="statistics_desc">Statistics</string>
+    <string name="abnormal_queries_desc">Abnormal Queries</string>
+    <string name="prediction_desc">Mental health Prediction</string>
+
+    <string name="email_verified">Email verified</string>
+
+
+    //terms and conditions
+    <string name="terms_text">
+Terms and Conditions:\n
+\n
+Welcome to Safe Mind Watch. By accessing or using our services, you agree to be bound by these Terms and Conditions along with our Privacy Policy.\n
+\n
+1. Eligibility and Purpose\n
+   I. Safe Mind Watch is intended solely for parents or legal guardians of minors under the age of 17.\n
+   II. You must be legally competent to enter into a binding agreement.\n
+   III. The app must only be used for monitoring your own child or legal ward.\n
+\n
+2. Informed Consent\n
+   I. You must obtain informed consent from the monitored minor, as required by applicable Indian law.\n
+   II. The app must not be used for unauthorized or illegal surveillance of other individuals.\n
+\n
+3. Data Collection and Usage\n
+   I. We collect your child’s search queries, website visits, and online browsing duration to assess digital behavior.\n
+   II. AI analysis is used to detect signs of:\n
+         • Suicidal ideation\n
+         • Depression, anxiety, or emotional distress\n
+         • Harmful or inappropriate online content\n
+   III. All collected data is end-to-end encrypted during both transmission and storage.\n
+\n
+4. Data Security and Retention\n
+   I. We adhere to the following legal frameworks:\n
+        • Information Technology Act, 2000\n
+        • IT (Reasonable Security Practices and Procedures) Rules, 2011\n
+        • Digital Personal Data Protection Act, 2023\n
+   II. All data is securely stored on Indian servers or internationally hosted servers compliant with Indian data protection standards.\n
+   III. Data is retained for a maximum of 30 days, unless an alert is triggered, in which case it may be retained longer for legal or audit purposes.\n
+\n
+5. Parental Rights and Controls\n
+   I. You have the right to access the data collected from your child’s activity.\n
+   II. You may request corrections to inaccurate data or deletion of collected information.\n
+   III. You may opt out of any non-essential or marketing-related data processing at any time.\n
+\n
+6. Alerts and Notifications\n
+   I. If our AI system detects signs of severe risk or harm, an SOS alert will be sent to the registered parent or guardian.\n
+   II. These alerts are not a substitute for professional medical or psychological consultation.\n
+\n
+7. Responsible Use\n
+   I. You must use Safe Mind Watch ethically and legally.\n
+   II. Misuse, including unauthorized surveillance or tampering with the service, is strictly prohibited.\n
+   III. We reserve the right to suspend or terminate access in the event of misuse or violation of these Terms.\n
+\n
+8. Third-Party Sharing\n
+   I. We do not sell or share your child’s data with third parties without explicit consent.\n
+   II. Exceptions apply only when required by law or government authorities.\n
+\n
+9. Changes to Terms\n
+   I. These Terms may be updated or revised at any time, with or without prior notice.\n
+   II. Continued use of the service after changes implies your acceptance of the updated Terms.\n
+\n
+10. Legal Jurisdiction\n
+   I. These Terms are governed by the laws of India.\n
+   II. Any disputes shall fall under the exclusive jurisdiction of the courts located in [Insert Your State, e.g., Tamil Nadu].\n
+</string>
+
+    <string name="privacy_text">
+Privacy Policy:\n
+\n
+This Privacy Policy describes how Safe Mind Watch collects, uses, and protects your information. By using our services, you agree to the practices outlined below.\n
+\n
+1. Data Collection\n
+   We collect your child’s search history, websites visited, time spent online, and related activity data to ensure their digital safety.\n
+\n
+2. Use of AI for Safety Monitoring\n
+   Our AI analyzes the collected data to detect early signs of:\n
+      • Suicidal thoughts\n
+      • Depression\n
+      • Harmful behavior\n
+      • Unsafe online activity\n
+\n
+3. Parent Registration Information\n
+   We collect the parent or guardian’s email, phone number, and consent details during account setup for verification and alerts.\n
+\n
+4. Data Storage and Security\n
+   All data is encrypted during transmission and securely stored on Indian or legally compliant international servers.\n
+\n
+5. Data Retention Policy\n
+   Data is retained for a maximum of 30 days unless a safety alert is triggered, in which case it may be retained for investigation or audit.\n
+\n
+6. No Unauthorized Sharing\n
+   We do not sell, rent, or share your data with any third party without explicit consent, except where required by law.\n
+\n
+7. Your Rights\n
+   As a parent or guardian, you can:\n
+      • Request access to your child’s data\n
+      • Ask for corrections\n
+      • Request deletion at any time\n
+\n
+8. Opt-Out Option\n
+   You may opt out of non-essential data processing or marketing communications through the app’s settings or by contacting support.\n
+\n
+9. Compliance with Indian Law\n
+   We comply with:\n
+     • Information Technology Act, 2000\n
+     • Digital Personal Data Protection Act, 2023\n
+     • Related Indian child protection laws\n
+\n
+10. Policy Updates\n
+    We may update this Privacy Policy from time to time. Continued use of the app after changes implies your acceptance of the updated terms.\n
+</string>
+
+    <string name="welcome_user">Welcome, User!</string>
+    <string name="major_feature">Major Feature</string>
+    <string name="footer_text">Developed with ❤ by Virtusolvers</string>
+    <string name="full_name">Full Name</string>
+    <string-array name="open_status_array">
+        <item>All</item>
+        <item>Open</item>
+        <item>Closed</item>
+    </string-array>
+
+    <string-array name="rating_array">
+        <item>All Ratings</item>
+        <item>5</item>
+        <item>4 and above</item>
+        <item>3 and above</item>
+        <item>2 and above</item>
+        <item>1 and above</item>
+    </string-array>
+
+    <string name="settings_icon_desc">Settings</string>
+
+
+
+
+
+
+
+</resources>
