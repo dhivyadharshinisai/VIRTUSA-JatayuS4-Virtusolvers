@@ -1,0 +1,161 @@
+package com.example.safemindwatch
+
+import android.content.Context
+import android.os.*
+import android.util.Log
+import android.webkit.*
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import okhttp3.*
+import org.json.JSONObject
+import java.io.IOException
+import java.net.URLEncoder
+
+class Dashboard : AppCompatActivity() {
+
+    private val client = OkHttpClient()
+    private val handler = Handler(Looper.getMainLooper())
+    private var keepChecking = true
+    private var hasVibrated = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_dashboard)
+
+        val userId = intent.getStringExtra("userId")
+        val chartWebView = findViewById<WebView>(R.id.chartWebView)
+
+        if (!userId.isNullOrEmpty()) {
+            val encodedFilter = URLEncoder.encode("""{"userId":"$userId","isHarmful":true}""", "UTF-8")
+            val chartUrl = "https://charts.mongodb.com/charts-smw-oaykseu/embed/dashboards" +
+                    "?id=68011b23-3fae-47ae-8ac9-94265afb0ea7" +
+                    "&theme=light&autoRefresh=true&filter=$encodedFilter&view=table"
+
+            setupWebView(chartWebView)
+
+            // ✅ Step 3 & 4: Use handler.postDelayed instead of viewTreeObserver
+            handler.postDelayed({
+                chartWebView.loadUrl(chartUrl)
+
+                // Fallback if loading hangs
+                handler.postDelayed({
+                    if (chartWebView.progress < 100) {
+                        Toast.makeText(this, "⏳ Chart not responding. Reloading...", Toast.LENGTH_SHORT).show()
+                        chartWebView.reload()
+                    }
+                }, 10000) // 10 seconds after load attempt
+
+            }, 500) // Wait 500ms for UI to stabilize
+
+            startLiveMonitoring(userId)
+        } else {
+            Toast.makeText(this, "User ID not found", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setupWebView(webView: WebView) {
+        webView.settings.apply {
+            javaScriptEnabled = true
+            domStorageEnabled = true
+            loadWithOverviewMode = true
+            useWideViewPort = true
+            builtInZoomControls = true
+            displayZoomControls = false
+            defaultTextEncodingName = "utf-8"
+        }
+
+        webView.setLayerType(WebView.LAYER_TYPE_HARDWARE, null)
+        webView.setInitialScale(1)
+        webView.isVerticalScrollBarEnabled = true
+        webView.isHorizontalScrollBarEnabled = true
+
+        webView.webChromeClient = WebChromeClient()
+
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                Log.d("WebView", "✅ Page Loaded: $url")
+            }
+        }
+    }
+
+    private fun startLiveMonitoring(userId: String) {
+        handler.post(object : Runnable {
+            override fun run() {
+                if (!keepChecking) return
+
+                val request = Request.Builder()
+                    .url("http://192.168.1.60:5000/$userId/totalTimeSpent")
+                    .build()
+
+                client.newCall(request).enqueue(object : Callback {
+                    override fun onFailure(call: Call, e: IOException) {
+                        Log.e("Monitoring", "API call failed: ${e.message}", e)
+                    }
+
+                    override fun onResponse(call: Call, response: Response) {
+                        response.use {
+                            if (!response.isSuccessful) {
+                                Log.e("Monitoring", "Unexpected response code: ${response.code}")
+                                return
+                            }
+
+                            val contentType = response.header("Content-Type") ?: ""
+                            if (!contentType.contains("application/json")) {
+                                Log.e("Monitoring", "Unexpected content type: $contentType")
+                                return
+                            }
+
+                            val bodyString = response.body?.string()
+                            if (bodyString != null) {
+                                try {
+                                    val json = JSONObject(bodyString)
+                                    val minutes = json.optDouble("totalTimeInMinutes", 0.0)
+                                    Log.d("Monitoring", "Harmful time: $minutes min")
+
+                                    if (minutes > 2 && !hasVibrated) {
+                                        runOnUiThread {
+                                            triggerVibration()
+                                            hasVibrated = true
+                                        }
+                                    }
+                                } catch (e: Exception) {
+                                    Log.e("Monitoring", "Failed to parse JSON: ${e.message}")
+                                    Log.e("Monitoring", "Raw response: $bodyString")
+                                }
+                            }
+                        }
+                    }
+                })
+
+                handler.postDelayed(this, 10000)
+            }
+        })
+    }
+
+    private fun triggerVibration() {
+        val duration = 500L
+
+        val vibrator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            val vibratorManager = getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vibratorManager.defaultVibrator
+        } else {
+            @Suppress("DEPRECATION")
+            getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        }
+
+        vibrator.vibrate(
+            VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE)
+        )
+
+        Toast.makeText(this, "⚠ Harmful content usage exceeded 2 minutes!", Toast.LENGTH_LONG).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        keepChecking = false
+    }
+}
+
+
+dashboard
