@@ -56,6 +56,8 @@ GOOGLE_API_KEY=AIzaSyDZPtvWR7c4oQB9lyKNDzn93fCjcI1hx8I
 1. Open `App-frontend/` in Android Studio
 2. Sync Gradle dependencies
 3. Configure `RetrofitClient.kt` and `network_security_config.xml` with your local IP
+4. cd VIRTUSA-JatayuS4-Virtusolvers/App-backend
+   npm install
 
 
 **Environment Configuration**:
@@ -128,9 +130,9 @@ python app.py
 |----------------------|------------------------|--------------------------------|
 | Web Frontend         | `npm start`            | http://localhost:3000          |
 | Web Backend          | `node server.js`       | http://localhost:5000          |
-| AI Service           | `python app.py`        | http://localhost:8000          |
+| AI Service           | `python app.py`        | http://localhost:5001          |
 | Mobile App Frontend  | Run in Android Studio  | Device/Emulator                |
-| Mobile App Backend   | `node server.js`       | http://localhost:[configured]   |
+| Mobile App Backend   | `node server.js`       | http://localhost:3000          |
 | Extension Frontend   | Load in Chrome         | Browser Extension UI           |
 | Extension Backend    | `node server.js`       | Runs in browser background     |
 
