@@ -1,4 +1,4 @@
-# Mind Gaurd - SafeMindWatch 
+# Mind Guard - SafeMindWatch
 
 ## Project Overview
 SafeMind Watch is an integrated ecosystem designed to protect children's mental health in digital spaces through:
@@ -20,8 +20,6 @@ VIRTUSA-JatayuS4-Virtusolvers/
 ├── Extension-backend/    # Chrome extension backend
 └── GenAI-Backend/        # Python GenAI service
 ```
-
-## Installation Guide
 
 ### Prerequisites
 - Node.js v16+
@@ -126,14 +124,59 @@ python app.py
 
 ## Running the System
 
-| Component       | Command                | Access Point         |
-|-----------------|------------------------|----------------------|
-| Web Frontend    | `npm start`            | http://localhost:3000|
-| Web Backend     | `node server.js`       | http://localhost:5000|
-| AI Service      | `python app.py`        | http://localhost:8000|
-| Mobile App      | Run in Android Studio  | Device/Emulator      |
+| Component            | Command                | Access Point                   |
+|----------------------|------------------------|--------------------------------|
+| Web Frontend         | `npm start`            | http://localhost:3000          |
+| Web Backend          | `node server.js`       | http://localhost:5000          |
+| AI Service           | `python app.py`        | http://localhost:8000          |
+| Mobile App Frontend  | Run in Android Studio  | Device/Emulator                |
+| Mobile App Backend   | `node server.js`       | http://localhost:[configured]   |
+| Extension Frontend   | Load in Chrome         | Browser Extension UI           |
+| Extension Backend    | `node server.js`       | Runs in browser background     |
 
+## Detailed Running Instructions
 
+### 1. Web Application
+```bash
+# Start frontend
+cd Webapp-frontend
+npm start
+
+# In another terminal, start backend
+cd Webapp-backend
+node server.js
+```
+
+### 2. Mobile Application
+```bash
+# Start mobile backend
+cd App-backend
+node server.js
+
+# Then in Android Studio:
+1. Open App-frontend folder
+2. Click 'Run' button
+3. Select target device/emulator
+```
+
+### 3. Browser Extension
+```bash
+# Start extension backend
+cd Extension-backend
+node server.js
+
+# Then in Chrome:
+1. Navigate to chrome://extensions
+2. Enable Developer Mode
+3. Click "Load unpacked"
+4. Select the Extension-frontend folder
+```
+
+### 4. AI Backend
+```bash
+cd GenAI-Backend
+python app.py
+```
 
 ## Project Structure Details
 
