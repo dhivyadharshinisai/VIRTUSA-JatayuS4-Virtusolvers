@@ -21,7 +21,7 @@ VIRTUSA-JatayuS4-Virtusolvers/
 └── GenAI-Backend/        # Python GenAI service
 ```
 
-## 🚀 Installation Guide
+## Installation Guide
 
 ### Prerequisites
 - Node.js v16+
@@ -80,7 +80,7 @@ VONAGE_BRAND_NAME=SmartMindWatch
 ### 2. Mobile App Setup
 1. Open `App-frontend/` in Android Studio
 2. Sync Gradle dependencies
-3. Configure `RetrofitClient.kt` with your local IP
+3. Configure `RetrofitClient.kt` and `network_security_config.xml` with your local IP
 
 
 **Environment Configuration**:
