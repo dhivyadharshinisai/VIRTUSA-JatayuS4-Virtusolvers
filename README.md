@@ -52,29 +52,6 @@ VONAGE_API_KEY=32b377c4
 VONAGE_API_SECRET=uIHHSgYfuDl64Kg9
 VONAGE_BRAND_NAME=SmartMindWatch
 GOOGLE_API_KEY=AIzaSyDZPtvWR7c4oQB9lyKNDzn93fCjcI1hx8I
-
-
-# App-backend/.env
-MONGODB_URI=mongodb+srv://karthikroshan3456:VDdkjED7YcVPcPda@cluster0.u3lsm.mongodb.net/SMW
-PORT=3000
-JWT_SECRET=2d1b1c43f58573c63f871ca85dc88d67245b187c7f2ea9cdaa537ae967a7d50240a30ccdfcacdb3eecf9dbc8184cd1e63519291c3bbfeaef24a4b927e9df0f87
-GOOGLE_CLIENT_ID = 808493242507-d1lvdphasrirkb1qnch0gaumg7p4g8bl.apps.googleusercontent.com
-VONAGE_API_KEY=97ecc09f
-VONAGE_API_SECRET=j0c4dLODu9wI51uH
-EMAIL_USER=safemindwatch@gmail.com
-EMAIL_PASS=vxayjytxdwthztho
-
-#Extension-backend/.env
-MONGO_URI=mongodb+srv://karthikroshan3456:VDdkjED7YcVPcPda@cluster0.u3lsm.mongodb.net/SMW?retryWrites=true&w=majority
-ALERT_EMAIL=safemindwatch@gmail.com
-ALERT_EMAIL_PASS=vxayjytxdwthztho
-SMTP_PASS=vxayjytxdwthztho
-SMTP_USER=safemindwatch@gmail.com
-GOOGLE_CLIENT_ID=534622735292-b3dda0oqdo1rkm4hpdq6ill8gksqm622.apps.googleusercontent.com
-GOOGLE_API_KEY=AIzaSyCgBDDap_5MKQ-kC-iQsHrEo8w34SE-MzY
-VONAGE_API_SECRET=uIHHSgYfuDl64Kg9
-VONAGE_API_KEY=32b377c4
-VONAGE_BRAND_NAME=SmartMindWatch
 ```
 
 ### 2. Mobile App Setup
