@@ -1,26 +1,45 @@
-MindGaurd- WebApp
+# Mind Gaurd - SafeMindWatch 
 
-Project Setup
+## Project Overview
+SafeMind Watch is an integrated ecosystem designed to protect children's mental health in digital spaces through:
 
-Requirements
-- Node.js (v16+)
-- MongoDB (v4.4+)
-- npm (v8+)
+- **Web Dashboard**: Parental monitoring interface
+- **Mobile App**: On-the-go access to child insights
+- **Browser Extension**: Real-time content monitoring
+- **AI Backend**: Advanced risk detection algorithms
 
-Quick Start
-1. Clone repository:
+## System Architecture
+
+```
+VIRTUSA-JatayuS4-Virtusolvers/
+├── Webapp-frontend/      # React dashboard (Port 3000)
+├── Webapp-backend/       # Node.js API (Port 5000)
+├── App-frontend/         # Android app (Kotlin)
+├── App-backend/          # Mobile API
+├── Extension-frontend/   # Chrome extension frontend
+├── Extension-backend/    # Chrome extension backend
+└── GenAI-Backend/        # Python GenAI service
+```
+
+## 🚀 Installation Guide
+
+### Prerequisites
+- Node.js v16+
+- MongoDB v4.4+
+- Python 3.8+
+- Android Studio (for mobile app)
+- Chrome browser (for extension)
+
+### 1. Web Application Setup
 ```bash
 git clone https://github.com/dhivyadharshinisai/VIRTUSA-JatayuS4-Virtusolvers.git
-cd VIRTUSA-JatayuS4-Virtusolvers
+cd VIRTUSA-JatayuS4-Virtusolvers/Webapp-frontend
+npm install
+cd ../Webapp-backend
+npm install
 ```
 
-2. Install dependencies:
-```bash
-cd Webapp-frontend && npm install
-cd ../Webapp-backend && npm install
-```
-
-3. Configure environment:
+**Environment Configuration**:
 ```bash
 # Webapp-backend/.env
 MONGODB_URI=mongodb+srv://karthikroshan3456:VDdkjED7YcVPcPda@cluster0.u3lsm.mongodb.net/SMW?retryWrites=true&w=majority
@@ -34,43 +53,123 @@ VONAGE_API_SECRET=uIHHSgYfuDl64Kg9
 VONAGE_BRAND_NAME=SmartMindWatch
 GOOGLE_API_KEY=AIzaSyDZPtvWR7c4oQB9lyKNDzn93fCjcI1hx8I
 
+
+# App-backend/.env
+MONGODB_URI=mongodb+srv://karthikroshan3456:VDdkjED7YcVPcPda@cluster0.u3lsm.mongodb.net/SMW
+PORT=3000
+JWT_SECRET=2d1b1c43f58573c63f871ca85dc88d67245b187c7f2ea9cdaa537ae967a7d50240a30ccdfcacdb3eecf9dbc8184cd1e63519291c3bbfeaef24a4b927e9df0f87
+GOOGLE_CLIENT_ID = 808493242507-d1lvdphasrirkb1qnch0gaumg7p4g8bl.apps.googleusercontent.com
+VONAGE_API_KEY=97ecc09f
+VONAGE_API_SECRET=j0c4dLODu9wI51uH
+EMAIL_USER=safemindwatch@gmail.com
+EMAIL_PASS=vxayjytxdwthztho
+
+#Extension-backend/.env
+MONGO_URI=mongodb+srv://karthikroshan3456:VDdkjED7YcVPcPda@cluster0.u3lsm.mongodb.net/SMW?retryWrites=true&w=majority
+ALERT_EMAIL=safemindwatch@gmail.com
+ALERT_EMAIL_PASS=vxayjytxdwthztho
+SMTP_PASS=vxayjytxdwthztho
+SMTP_USER=safemindwatch@gmail.com
+GOOGLE_CLIENT_ID=534622735292-b3dda0oqdo1rkm4hpdq6ill8gksqm622.apps.googleusercontent.com
+GOOGLE_API_KEY=AIzaSyCgBDDap_5MKQ-kC-iQsHrEo8w34SE-MzY
+VONAGE_API_SECRET=uIHHSgYfuDl64Kg9
+VONAGE_API_KEY=32b377c4
+VONAGE_BRAND_NAME=SmartMindWatch
 ```
 
-4. Run the system:
+### 2. Mobile App Setup
+1. Open `App-frontend/` in Android Studio
+2. Sync Gradle dependencies
+3. Configure `RetrofitClient.kt` with your local IP
+
+
+**Environment Configuration**:
 ```bash
-# Terminal 1 (backend)
-cd Webapp-backend && node server.js
+# App-backend/.env
+MONGODB_URI=mongodb+srv://karthikroshan3456:VDdkjED7YcVPcPda@cluster0.u3lsm.mongodb.net/SMW
+PORT=3000
+JWT_SECRET=2d1b1c43f58573c63f871ca85dc88d67245b187c7f2ea9cdaa537ae967a7d50240a30ccdfcacdb3eecf9dbc8184cd1e63519291c3bbfeaef24a4b927e9df0f87
+GOOGLE_CLIENT_ID = 808493242507-d1lvdphasrirkb1qnch0gaumg7p4g8bl.apps.googleusercontent.com
+VONAGE_API_KEY=97ecc09f
+VONAGE_API_SECRET=j0c4dLODu9wI51uH
+EMAIL_USER=safemindwatch@gmail.com
+EMAIL_PASS=vxayjytxdwthztho
 
-# Terminal 2 (frontend)
-cd ../Webapp-frontend && npm start
 ```
 
-## System Architecture
-```
-Webapp-frontend/ - React dashboard (port 3000)
-  ├── src/
-  │   ├── components/ - UI components
-  │   └── pages/ - Application views
+### 3. Browser Extension
+1. Navigate to `chrome://extensions`
+2. Enable Developer Mode
+3. Load unpacked extension from `/extension` folder
 
-Webapp-backend/ - Node.js API (port 5000)
-  ├── models/ - MongoDB schemas
-  └── routes/ - API endpoints
+**Environment Configuration**:
+```bash
+#Extension-backend/.env
+MONGO_URI=mongodb+srv://karthikroshan3456:VDdkjED7YcVPcPda@cluster0.u3lsm.mongodb.net/SMW?retryWrites=true&w=majority
+ALERT_EMAIL=safemindwatch@gmail.com
+ALERT_EMAIL_PASS=vxayjytxdwthztho
+SMTP_PASS=vxayjytxdwthztho
+SMTP_USER=safemindwatch@gmail.com
+GOOGLE_CLIENT_ID=534622735292-b3dda0oqdo1rkm4hpdq6ill8gksqm622.apps.googleusercontent.com
+GOOGLE_API_KEY=AIzaSyCgBDDap_5MKQ-kC-iQsHrEo8w34SE-MzY
+VONAGE_API_SECRET=uIHHSgYfuDl64Kg9
+VONAGE_API_KEY=32b377c4
+VONAGE_BRAND_NAME=SmartMindWatch
 ```
 
-## Key Features
-- Real-time search monitoring
-- Mental health risk detection
-- Interactive analytics dashboard
-- Secure user authentication
+### 4. AI Backend
+```bash
+cd genai-backend
+pip install -r requirements.txt
+python app.py
+```
+
+##  Key Features
+
+### Web Dashboard
+- Real-time activity monitoring
+- Sentiment analysis visualization
 - PDF report generation
+- Multi-child profile management
 
-## Development Commands
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start frontend dev server |
-| `node server.js` | Start backend API |
+### Mobile App
+- Push notifications for alerts
+- Quick access to child insights
+- Secure authentication
 
-## Access Points
-- Dashboard: http://localhost:3000
+### Browser Extension
+- Real-time content scanning
+- Harmful content blocking
+- Activity logging
 
-Note: Ensure MongoDB service is running before starting the backend.
+### AI Backend
+- BERT-based risk classification
+- Confidence scoring
+- Continuous learning
+
+## Running the System
+
+| Component       | Command                | Access Point         |
+|-----------------|------------------------|----------------------|
+| Web Frontend    | `npm start`            | http://localhost:3000|
+| Web Backend     | `node server.js`       | http://localhost:5000|
+| AI Service      | `python app.py`        | http://localhost:8000|
+| Mobile App      | Run in Android Studio  | Device/Emulator      |
+
+
+
+## Project Structure Details
+
+### Web Components
+- Frontend: React with Chart.js for visualizations
+- Backend: Express.js with MongoDB/Mongoose
+
+### Mobile Components
+- Retrofit for API communication
+- Material Design UI components
+- Secure local storage
+
+### AI Components
+- Fine-tuned BERT model
+- Flask API endpoints
+- Confidence thresholding
